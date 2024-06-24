@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class UserData : MonoBehaviour
 {
-    public enum UserDataList
-    {
-        
-    }
+    public int userID;
+    public string userName;
 
-    void Start()
+    public UserData(int userId)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        this.userID = userID;
+       
     }
 }

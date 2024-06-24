@@ -190,6 +190,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292578106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 641591504457949079, guid: c1f878ce81c01c9498085ada3ac06e1d, type: 3}
+  m_PrefabInstance: {fileID: 1477056823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e287d7de0c1149a46b4b5d3a9ea89ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671169398
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +378,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 292578106}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
         m_MethodName: LoadIngameScene
         m_Mode: 1

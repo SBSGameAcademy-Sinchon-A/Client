@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     {
         if (userInterfaceStack.Count == 0)
         {
-            // ÀÏ½ÃÁ¤Áö
+            // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
