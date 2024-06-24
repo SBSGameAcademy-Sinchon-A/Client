@@ -1,10 +1,13 @@
     using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public int nextScene;
+
     public enum SceneList
     {
         SampleScene, TestScene1, TestScene2
@@ -23,6 +26,20 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadScene(SceneList scene)
     {
-        SceneManager.LoadScene((int) scene);
+        nextScene = (int) scene;
+
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadScene(int scene)
+    {
+        nextScene = scene;
+
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadIngameScene()
+    {
+        LoadScene(2);
     }
 }
