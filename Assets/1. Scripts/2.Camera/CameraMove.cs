@@ -6,17 +6,17 @@ public class CameraMove : MonoBehaviour
 {
     public GameObject player;
     
-    Vector3 distance;
-
-
+    public Vector3 distance;
+    public Vector3 playerDistance;
 
     void Start()
     {
         distance = transform.position - player.transform.position; 
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        playerDistance = player.transform.position;
         transform.position = distance + player.transform.position;
     }
 }

@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class LoadingSceneManager : MonoBehaviour
 {
-    int nextScene;
+    public int nextScene;
 
     public Image progressBar;
     
     void Start()
     {
-        nextScene = Singleton.instance.GetComponentInChildren<SceneManagement>().nextScene;
+        nextScene = SceneManagement.nextScene;
 
         StartCoroutine(LoadSceneProcess());
     }

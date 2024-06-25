@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class OnlyForTest : MonoBehaviour
 {
-    public GameObject testObject;
+    PlayerStatus playerStatus;
+    UIManager uiManager;
+    SaveLoadManager saveLoadManager;
 
     void Start()
     {
+        playerStatus = Singleton.instance.GetComponentInChildren<PlayerStatus>();
+        uiManager = Singleton.instance.GetComponentInChildren<UIManager>();
+        saveLoadManager = Singleton.instance.GetComponentInChildren<SaveLoadManager>();
     }
 
     void Update()
@@ -15,15 +20,14 @@ public class OnlyForTest : MonoBehaviour
         // Scene Management Test
         if (Input.GetKeyDown(KeyCode.F9))
         {
-            testObject.GetComponent<SceneManagement>().LoadScene(SceneManagement.SceneList.SampleScene);
+            playerStatus.hp -= 10;
+            playerStatus.mp -= 10;
+            uiManager.RenewIngameUI();
         }
+
         else if (Input.GetKeyDown(KeyCode.F10))
         {
-            testObject.GetComponent<SceneManagement>().LoadScene(SceneManagement.SceneList.TestScene1);
-        }
-        else if (Input.GetKeyDown(KeyCode.F11))
-        {
-            testObject.GetComponent<SceneManagement>().LoadScene(SceneManagement.SceneList.TestScene2);
+            saveLoadManager.Save();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class GameData : MonoBehaviour
+public class GameData
 {
     public float playerHp;
 }

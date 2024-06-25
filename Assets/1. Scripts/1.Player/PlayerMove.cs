@@ -8,33 +8,23 @@ public class PlayerMove : MonoBehaviour
 {
     public bool isMove;
 
-    private void Start()
-    {
+    public Vector2 smoothInputVelocity;
+    public Vector2 moveVector;
+    public Vector2 curVector;
 
+    public float smoothRatio;
+
+    private void FixedUpdate()
+    {
+        curVector = Vector2.SmoothDamp(curVector, moveVector, ref smoothInputVelocity, smoothRatio);
+
+        Vector3 destination = new Vector3(curVector.x, 0, curVector.y) + transform.position;
+
+        transform.DOMove(destination, 1f);
     }
 
-    private void Update()
-    {
-        Move();
-
-    }
-
-    public void Move()
-    {
-        if (!isMove)
-        {
-            return;
-        }
-    }
     public void OnMove(InputValue value)
     {
-        Vector2 direction = value.Get<Vector2>();
-
-        Vector3 direction3D = new Vector3(direction.x, 0, direction.y);
-
-        transform.DOMove(transform.position + direction3D, 1);
-        
-       
-        
+        moveVector = value.Get<Vector2>();
     }
 }

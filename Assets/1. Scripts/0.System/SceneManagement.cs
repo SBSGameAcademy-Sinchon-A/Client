@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    public int nextScene;
+    public static int nextScene;
 
     public enum SceneList
     {

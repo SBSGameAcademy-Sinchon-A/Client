@@ -4,12 +4,12 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class UserData : MonoBehaviour
+public class UserData
 {
     public int userID;
     public string userName;
 
-    public UserData(int userId)
+    public UserData(int userID)
     {
         this.userID = userID;
        
